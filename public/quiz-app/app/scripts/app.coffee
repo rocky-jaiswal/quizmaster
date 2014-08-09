@@ -2,9 +2,9 @@
 
 ###*
  # @ngdoc overview
- # @name quizAppApp
+ # @name quizApp
  # @description
- # # quizAppApp
+ # # quizApp
  #
  # Main module of the application.
 ###
@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'quizApp.webService'
   ])
   .config ($routeProvider) ->
     $routeProvider

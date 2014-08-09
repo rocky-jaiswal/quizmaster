@@ -1,3 +1,10 @@
 <div class="jumbotron">
-  <h1>Welcome to QuizMaster!</h1>
+  <h3>{{question.content}}</h3>
+  <li ng-repeat="answer in answers">
+    <input type="checkbox" ng-model="answer.done">
+    <span>{{answer.answer_content}}</span>
+  </li>
 </div>
+
+<button class="btn btn-primary" ng-click="prevQuestion()">Prev</button>
+<button class="btn btn-info" ng-click="nextQuestion()">Next</button>
