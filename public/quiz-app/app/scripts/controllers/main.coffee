@@ -1,11 +1,13 @@
 'use strict'
 
+app = require("./../app")
+
 class MainCtrl
 
   constructor: (@$scope, @$location, @webService) ->
+    @index = 0
     @$scope.nextQuestion = @nextQuestion
     @$scope.prevQuestion = @prevQuestion
-    @index = 0
     promise = @webService.getQuestions()
     promise.then @success, @error
 
@@ -29,4 +31,4 @@ class MainCtrl
     @showQuestion(@index)
 
 MainCtrl.$inject = ["$scope", "$location", "webService"]
-angular.module("quizApp").controller "MainCtrl", MainCtrl
+app.controller "MainCtrl", MainCtrl

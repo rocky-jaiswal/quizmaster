@@ -1,5 +1,7 @@
 'use strict'
 
+require('angular/angular')
+
 class WebService
 
   constructor: (@$http) ->

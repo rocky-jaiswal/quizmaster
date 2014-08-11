@@ -14,8 +14,6 @@ var mountFolder = function (connect, dir) {
 
 module.exports = function (grunt) {
 
-  grunt.loadNpmTasks('grunt-browserify');
-
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -44,7 +42,7 @@ module.exports = function (grunt) {
       },
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
-        tasks: ['newer:coffee:dist', 'browserify']
+        tasks: ['newer:coffee:dist']
       },
       coffeeTest: {
         files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
@@ -392,14 +390,6 @@ module.exports = function (grunt) {
       ]
     },
 
-    browserify: {
-      dist: {
-        files: {
-          '<%= yeoman.app %>/../.tmp/build/quiz_app.js': ['<%= yeoman.app %>/../.tmp/scripts/**/*.js'],
-        }
-      }
-    },
-
     // Test settings
     karma: {
       unit: {
@@ -420,7 +410,6 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
-      'browserify',
       'configureProxies',
       'connect:livereload',
       'watch'

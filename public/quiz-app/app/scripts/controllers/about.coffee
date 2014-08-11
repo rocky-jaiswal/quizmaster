@@ -1,12 +1,6 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name quizApp.controller:AboutCtrl
- # @description
- # # AboutCtrl
- # Controller of the quizApp
-###
-angular.module('quizApp')
-  .controller 'AboutCtrl', ($scope) ->
-    
+app = require("./../app")
+
+app.controller 'AboutCtrl', ($scope) ->
+  $scope.message = "Built with Rails + Angular.js + Browserify"

@@ -1,5 +1,8 @@
 'use strict'
 
+require('angular/angular')
+require('angular-route/angular-route')
+
 ###*
  # @ngdoc overview
  # @name quizApp
@@ -8,17 +11,9 @@
  #
  # Main module of the application.
 ###
-angular
-  .module('quizApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'quizApp.webService'
-  ])
-  .config ($routeProvider) ->
+app = angular.module('quizApp', ['ngRoute', 'quizApp.webService'])
+
+app.config ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
@@ -29,3 +24,4 @@ angular
       .otherwise
         redirectTo: '/'
 
+module.exports = app
