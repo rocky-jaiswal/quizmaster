@@ -3,14 +3,6 @@
 require('angular/angular')
 require('angular-route/angular-route')
 
-###*
- # @ngdoc overview
- # @name quizApp
- # @description
- # # quizApp
- #
- # Main module of the application.
-###
 app = angular.module('quizApp', ['ngRoute', 'quizApp.webService'])
 
 app.config ($routeProvider) ->
