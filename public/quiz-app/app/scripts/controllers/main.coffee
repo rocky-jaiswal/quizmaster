@@ -21,6 +21,7 @@ class MainCtrl
     console.log response
 
   showQuestion:(index)=>
+    @clearResponses()
     @$scope.question = @questions[index]
     @$scope.answers  = @questions[index].answers
 
@@ -35,8 +36,16 @@ class MainCtrl
   submitResponse:=>
     selected = _.filter(@$scope.answers, (a)-> a.selected)
     selected = _.map(selected, (s)-> s.answer_id)
-    console.log @questions[@index].id
-    console.log selected
+    promise  = @webService.postResponse(@questions[@index].id, selected)
+    promise.then @showResult, @error
+
+  showResult:(response)=>
+    @$scope.rightResponse = true if response.data.correct
+    @$scope.wrongResponse = true unless response.data.correct
+
+  clearResponses:=>
+    @$scope.rightResponse = false
+    @$scope.wrongResponse = false
 
 MainCtrl.$inject = ["$scope", "$location", "webService"]
 app.controller "MainCtrl", MainCtrl

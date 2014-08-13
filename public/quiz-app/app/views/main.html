@@ -6,7 +6,9 @@
   </li>
   <hr/>
   <button class="btn btn-success" ng-click="submitResponse()">Answer</button>
-</div>
 
+  <div class="alert alert-success" data-ng-show="rightResponse">Great! Right answer.</div>
+  <div class="alert alert-danger"  data-ng-show="wrongResponse">Sorry! Try again.</div>
+</div>
 <button class="btn btn-primary" ng-click="prevQuestion()">Prev</button>
 <button class="btn btn-info" ng-click="nextQuestion()">Next</button>

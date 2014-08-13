@@ -10,8 +10,8 @@ Answer.create(content: '1988', correct: false, question: questions.first)
 Answer.create(content: '1981', correct: false,  question: questions.first)
 
 Answer.create(content: 'Tabla', correct: false, question: questions.second)
-Answer.create(content: 'Tarang', correct: true, question: questions.second)
-Answer.create(content: 'Sitar', correct: false,  question: questions.second)
+Answer.create(content: 'Tarang', correct: false, question: questions.second)
+Answer.create(content: 'Sitar', correct: true,  question: questions.second)
 Answer.create(content: 'Bansuri', correct: false, question: questions.second)
 
 Answer.create(content: 'The Joshua Tree', correct: true, question: questions.last)
