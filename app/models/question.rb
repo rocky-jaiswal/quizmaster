@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
 
   def as_json(options={})
     {
+      id: self.id,
       content: content,
       answers: self.answers.map{ |a| {answer_id: a.id, answer_content: a.content} }
     }

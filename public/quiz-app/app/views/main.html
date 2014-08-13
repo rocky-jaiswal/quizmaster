@@ -1,9 +1,11 @@
 <div class="jumbotron">
   <h3>{{question.content}}</h3>
   <li ng-repeat="answer in answers">
-    <input type="checkbox" ng-model="answer.done">
+    <input type="checkbox" ng-model="answer.selected">
     <span>{{answer.answer_content}}</span>
   </li>
+  <hr/>
+  <button class="btn btn-success" ng-click="submitResponse()">Answer</button>
 </div>
 
 <button class="btn btn-primary" ng-click="prevQuestion()">Prev</button>

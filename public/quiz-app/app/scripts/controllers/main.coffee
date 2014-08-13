@@ -1,11 +1,13 @@
 'use strict'
 
 app = require("./../app")
+_ = require("underscore")
 
 class MainCtrl
 
   constructor: (@$scope, @$location, @webService) ->
     @index = 0
+    @$scope.submitResponse = @submitResponse
     @$scope.nextQuestion = @nextQuestion
     @$scope.prevQuestion = @prevQuestion
     promise = @webService.getQuestions()
@@ -29,6 +31,12 @@ class MainCtrl
   prevQuestion:=>
     @index = @index - 1 if @index > 0
     @showQuestion(@index)
+
+  submitResponse:=>
+    selected = _.filter(@$scope.answers, (a)-> a.selected)
+    selected = _.map(selected, (s)-> s.answer_id)
+    console.log @questions[@index].id
+    console.log selected
 
 MainCtrl.$inject = ["$scope", "$location", "webService"]
 app.controller "MainCtrl", MainCtrl

@@ -2,7 +2,8 @@
   "name": "quizapp",
   "version": "0.0.0",
   "dependencies": {
-    "browserify": "~5.9.3"
+    "browserify": "~5.9.3",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
